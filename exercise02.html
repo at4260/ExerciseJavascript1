@@ -14,7 +14,8 @@
             var current_fib = 1;
             while (current_fib < max) {
                 fib_list.push(current_fib);
-                current_fib = fib_list[fib_list.length-1] + fib_list[fib_list.length-2];
+                current_fib = fib_list[fib_list.length-1] + 
+                    fib_list[fib_list.length-2];
             }
             return fib_list;  
         } else{
@@ -32,7 +33,7 @@
 
     function filter(aFunction, aList){
         var filtered_list = [];
-        for (var i=0; i<aList.length; i++){
+        for (var i = 0; i < aList.length; i++){
             if (aFunction(aList[i]) === true){
                 filtered_list.push(aList[i]);
             }
@@ -42,18 +43,15 @@
 
     function sum(aList){
         var total = 0;
-        for (var i=0; i<aList.length; i++){
+        for (var i = 0; i < aList.length; i++){
             total += aList[i];
         }
-        return total;    }
-
+        return total;    
+    }
 
     console.log(sum(filter(isEven, fibonacci_set(1000))));
 
-
 </script>
-
-
 
 </body>
 
