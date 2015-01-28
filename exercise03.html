@@ -13,15 +13,51 @@
     //check if in original list, or iterate over list while iterating over list (skills2 reference)
     //if it is, add to new list
 
+
     function returnDuplicates(aList){
+
         var new_list = [];
         for (var num = 0; num < aList.length; num++){
             for (var num2 = 0; num2 < aList.length; num2++){
-                
+                if (num !== num2) {
+                    if (aList[num] === aList[num2]){
+                        if (new_list.length === 0){
+                            new_list.push(aList[num]);
+                            // console.log("first_item"+ new_list)    
+                        }
+                        else{
+                            for (var list_num = 0; list_num < new_list.length; 
+                            list_num++){
+                                if (new_list[list_num] === aList[num]){
+                                    break;
+                                } else {
+                                    if (list_num === new_list.length - 1){
+                                        new_list.push(aList[num]); 
+                                    }   
+                                    // console.log(aList[num]);
+                                }
+                            }    
+                        }                        
+                    }
+                }
             }
         }
+        return new_list;
 
     }
+
+    var votesToGoEatCake = [true, true, true, true]
+    var hackbrightStudents = ["katie", "amy", "jenny", "katie", "kelley", "katie", "amy"]
+    var classroomIds = ["47","12", "19", "22", "26", "99", "30", "50", "324", "003", "44",
+    "33", "346", "354", "44", "235", "45", "34", "44", "590", "09", "099", "0", "1", "3", 
+    "33", "999", "9"]
+    var randomJunkIFound = ["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 + 3", 
+    19, "19", 19 === "19", 6, false, false]
+
+    console.log(returnDuplicates(votesToGoEatCake));
+    console.log(returnDuplicates(hackbrightStudents));
+    console.log(returnDuplicates(classroomIds));
+    console.log(returnDuplicates(randomJunkIFound));
 
 
 
