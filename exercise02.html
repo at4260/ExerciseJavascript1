@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Learning</title>
+</head>
+
+<body>
+<h1>Javascript Learning </h1>
+
+<script>
+    function fibonacci_set(max) {
+        if (max > 1) {
+            var fib_list = [1];
+            var current_fib = 1;
+            while (current_fib < max) {
+                fib_list.push(current_fib);
+                current_fib = fib_list[fib_list.length-1] + fib_list[fib_list.length-2];
+            }
+            return fib_list;  
+        } else{
+            return [1,1];
+        }
+    }
+
+    function isEven(n) {
+        return n % 2 === 0;
+    }
+
+    // for num in fib_list
+    // if is_even(num) === true
+    // add num to new_list (even and fib_list)
+
+    function filter(aFunction, aList){
+        var filtered_list = [];
+        for (var i=0; i<aList.length; i++){
+            if (aFunction(aList[i]) === true){
+                filtered_list.push(aList[i]);
+            }
+        }
+        return filtered_list;
+    }
+
+    function sum(aList){
+        var total = 0;
+        for (var i=0; i<aList.length; i++){
+            total += aList[i];
+        }
+        return total;    }
+
+
+    console.log(sum(filter(isEven, fibonacci_set(1000))));
+
+
+</script>
+
+
+
+</body>
+
+</html>
