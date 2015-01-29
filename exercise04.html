@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Learning</title>
+</head>
+
+<body>
+<h1>Javascript Learning </h1>
+
+<script>
+    var cat = {
+        tiredness: 20,
+        hunger: 20,
+        loneliness: 3,
+        happiness: 15, 
+        obedience: -5000,
+        feed: function () {
+            console.log("Om nom nom");
+            this.hunger = this.hunger - 5;
+        },
+        sleep: function () {
+            console.log("zzzzzzzzzzzZZZzzzz");
+            this.tiredness -= 5;
+        },
+        pet: function () {
+            console.log("mmmmmmm");
+            this.happiness += 5;
+            this.obedience += 1000;
+            this.loneliness -= 1;
+        },
+        catStatus: function () {
+            console.log("tiredness:" + this.tiredness + ", hunger:" + this.hunger + ", loneliness:" + this.loneliness + ", happiness:" + this.happiness + ", obedience:" + this.obedience);
+        }
+    };
+
+    // Optional cat-statusing method
+    // function printStatus(myCat){
+    //     console.log("tiredness:" + myCat.tiredness + ", hunger:" + myCat.hunger + ",  loneliness:" + myCat.loneliness + ", happiness:" + myCat.happiness + ", obedience:" + myCat.obedience);
+    // }
+    cat.feed();
+    cat.pet();
+    cat.sleep();
+    cat.pet();
+    cat.catStatus();
+
+    // printStatus(cat);
+
+</script>
+
+
+
+</body>
+
+</html>
